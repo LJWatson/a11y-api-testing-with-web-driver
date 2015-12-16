@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Accessibility API testing with Web Driver</title>
+<link rel="stylesheet" type="text/css" href="../css/basic.css">
+</head>
+
+<body>
+<h1>Accessibility API testing with Web Driver</h1>
+
+<p>Traditional accessibility API testing is an activity that requires considerable time and effort, and consequently comes at a high cost. Each platform has one or more <a href="http://www.smashingmagazine.com/2015/03/web-accessibility-with-accessibility-api/">accessibility APIs</a> that expose accessibility information to assistive technologies. At present it is necessary to manually test accessibility API output in web browsers, which is inefficient both operationally and economically.</p>
+
+<p><a href="https://w3c.github.io/webdriver/webdriver-spec.html">Web Driver</a> is an interface that enables tests to be executed against web browsers. It is a platform and language neutral specification that has already been integrated into <a href="http://www.seleniumhq.org/docs/03_webdriver.jsp">Selenium 2.0</a>. Web Driver does not currently support accessibility APIs, but should this capability be introduced Web Driver would have the potential to significantly improve the efficiency and scalability of accessibility testing.</p>
+
+<p>Browsers take a sub-set of information from the DOM and create an accessibility tree that contains information about the role, name and state of DOM objects. Assistive technologies (like screen readers and speech recognition tools) use the available platform accessibility APIs to query information from the browser accessibility tree.</p>
+
+<p>Being able to test whether DOM objects expose the expected information is an important part of accessibility testing. For example, being able to verify that the <code>&lt;button&gt;</code> element is exposed as having the button role through each of the platform accessibility APIs.</p>
+
+<p>The expected output from web browsers is documented in the <a href="http://www.w3.org/TR/core-aam-1.1/">Core Accessibility API Mappings</a> specification. Host language specific information is available in the <a href="http://www.w3.org/TR/html-aam-1.0/">HTML Accessibility API Mappings</a> and <a href="http://www.w3.org/TR/svg-aam-1.0/">SVG Accessibility API Mappings</a> specifications. The <a href="http://www.w3.org/TR/accname-aam-1.1/">Accessible Name and Description Computation API</a> defines the algorithms used to calculate the accessible name and accessible descriptions of objects in the browser accessibility tree.</p>
+
+<p>Introducing a set of accessibility API specific commands into Web Driver would enable the automation of this level of accessibility testing. Web Driver has two carachteristics that make it a strong candidate for supporting accessibility API testing:</p>
+
+<ul>
+<li>It is platform neutral. This means it should be practical to execute tests against different browsers and accessibility APIs.</li>
+<li>It supports testing of interactive content. This means it should be possible to test accessibility API output based on factors like DOM changes and user interaction.</li>
+</ul>
+
+</body>
+</html>
